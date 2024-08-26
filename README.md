@@ -26,9 +26,9 @@ You can show the deployment link with this screenshot.or you can saw by vs code 
 
 # Installation To run this project install it locally using npm:
 
-npm init -y
-npm install
-node server.js
+# -npm init -y
+# -npm install
+# -node server.js
 
 # SCREENSHOTS: #
 
