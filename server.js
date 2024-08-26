@@ -22,6 +22,7 @@ mongoose.connect(dbURI,{
 app.post('/cities',cityController.addCity);
 app.put('/cities/:id',cityController.updateCity);
 app.delete('/cities/:id',cityController.deleteCity);
+app.get('/cities', cityController.getAllCities); 
 app.get('/cities',cityController.getCities);
 
 const PORT = process.env.PORT || 3000;
