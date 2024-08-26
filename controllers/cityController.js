@@ -6,11 +6,12 @@ exports.addCity = async (req, res) => {
     try {
         const city = new City(req.body);
         await city.save();
-        res.status(201).json({ message: 'City added successfully', city });
+        res.status(201).json({ message: 'City added successfully', city: city });
     } catch (err) {
         res.status(400).json({ error: err.message });
     }
 };
+
 
 // Update City
 exports.updateCity = async (req, res) => {
@@ -37,6 +38,16 @@ exports.deleteCity = async (req, res) => {
         res.status(400).json({ error: err.message });
     }
 };
+
+exports.getAllCities = async (req, res) => {
+    try {
+        const cities = await City.find();
+        res.json(cities);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
 
 // Get Cities with qury parameter
 //http://localhost:3000/cities?page=1&limit=10&filter={"country":"USA"}&sort={"population":"desc"}&search=New York&projection=name,country,population
