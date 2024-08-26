@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cityController = require('./controllers/cityController');
 
 const app = express();
+app.use(express.json())
 app.use(bodyParser.json());
 
 const dbURI ="mongodb+srv://cwpalade97:chetancity@cluster0.tasa9.mongodb.net/citiesdb?retryWrites=true&w=majority&appName=Cluster0"
